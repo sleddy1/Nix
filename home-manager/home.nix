@@ -9,6 +9,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
+    # inputs.stylix.homeManagerModules.stylix
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
 
@@ -38,7 +39,6 @@
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "scott";
     homeDirectory = "/home/scott";
@@ -47,12 +47,19 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
-  # nixowos.enable = true;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  
+  #programs.alacritty.enable = true;
+  programs.kitty.enable = true;
+  programs.fuzzel.enable = true;
+  programs.waybar.enable = true;
+  programs.anki.enable = true;
+  #stylix.enable = true;
+  #stylix.autoEnable = false;
+  stylix.targets.kitty.enable = true;
+  stylix.targets.vscode.enable = true;
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

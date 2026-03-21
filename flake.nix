@@ -4,7 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,8 +19,8 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
-    stylix,
     ...
   } @ inputs: let
   in {
@@ -28,10 +28,18 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       pharloom = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = let 
+          system = "x86_64-linux";
+        in {
+          inherit inputs;
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
 
         modules = [
-          stylix.nixosModules.stylix
+          inputs.stylix.nixosModules.stylix
           ./nixos/configuration.nix
         ];
       };
