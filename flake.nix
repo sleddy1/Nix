@@ -9,6 +9,10 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    import-tree.url = "github:vic/import-tree";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default";
+
     # Stylix
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
