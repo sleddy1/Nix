@@ -3,6 +3,7 @@
   flake.nixosConfigurations.pharloom = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs; };
     modules = [
+      inputs.stylix.nixosModules.stylix
       self.modules.nixos.pharloom
     ];
   };
@@ -15,11 +16,16 @@
     hardware-pharloom
     desktops-niri
     backwards
+    stylixa
 
     users-scott
   ] ++ [
     inputs.home-manager.nixosModules.default
     {
+#      home-manager.useGlobalPkgs = true;
+#      home-manager.useUserPackages = true;
+
+#      home-manager.extraSpecialArgs = { inherit inputs self; };
       home-manager.users.scott = {
         imports = with self.modules.homeManager; [
             users-scott

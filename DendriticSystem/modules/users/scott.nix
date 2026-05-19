@@ -49,21 +49,28 @@
         programs.fuzzel.enable = true;
         programs.waybar.enable = true;
         programs.anki.enable = true;
+        programs.fastfetch.enable = true;
+        #programs.discord.enable = true; switch once settings are migrated
+        #programs.vscode.enable = true; switch once settings are migrated
+        programs.firefox.enable = true;
+        programs.vim.enable = true;
+
 
         # TODO: Investigate stylix and how it applies across modularity
-        # stylix.targets.kitty.enable = true;
+        #stylix.targets.kitty.enable = true;
         # stylix.targets.vscode.enable = true;
         
         home.packages = with pkgs; [
             firefox
             vscode
             discord
-            fastfetch
-            fuzzel
+            #fastfetch
+            # fuzzel
             # TODO: Maybe clean below
             curl
             wget
-            vim
+            # vim
+            #waybar
         ];
     };
 }

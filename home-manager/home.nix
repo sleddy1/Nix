@@ -58,8 +58,8 @@
   programs.anki.enable = true;
   #stylix.enable = true;
   #stylix.autoEnable = false;
-  stylix.targets.kitty.enable = true;
-  stylix.targets.vscode.enable = true;
+  #stylix.targets.kitty.enable = true;
+  #stylix.targets.vscode.enable = true;
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

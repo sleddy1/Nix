@@ -3,7 +3,8 @@
   ...
 }: 
 {
-    flake.modules.nixos.stylix = {
+    # TODO: Determine why stylix is not working
+    flake.modules.nixos.stylixa = { pkgs, ... }: {
         stylix = {
             enable = true;
             autoEnable = true;
@@ -13,8 +14,13 @@
                 url = "https://getwallpapers.com/wallpaper/full/1/4/3/523784.jpg";
                 hash = "sha256-S/6kgloXiIYI0NblT6YVXfqELApbdHGsuYe6S4JoQwQ=";
             };
-            # cursor.package = pkgs.bibata-cursors;
-            # cursor.name = "Bibata-Modern-Ice";
+
+            cursor = {
+                package = pkgs.miku-cursor;
+                name = "miku-cursor-linux";
+                size = 16;
+            };
+
             fonts = {
                 monospace = {
                     package = pkgs.nerd-fonts.jetbrains-mono;
