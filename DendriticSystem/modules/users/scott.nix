@@ -47,7 +47,7 @@
 
     flake.modules.homeManager.users-scott-apps = {pkgs, ... }: {
         programs.fuzzel.enable = true;
-        programs.waybar.enable = true;
+        #programs.waybar.enable = true;
         programs.anki.enable = true;
         programs.fastfetch.enable = true;
         #programs.discord.enable = true; switch once settings are migrated
