@@ -1,16 +1,16 @@
 { self, ... }:
 {
-    flake.modules.nixos.hardware-pharloom = {
+    flake.modules.nixos.hardware-bone-bottom = {
         imports = with self.modules.nixos; [
             hardware-common
-            hardware-pharloom-disks
-            hardware-pharloom-hardware
-            hardware-pharloom-hardware
-            hardware-pharloom-kernel
+            hardware-bone-bottom-disks
+            hardware-bone-bottom-hardware
+            hardware-bone-bottom-hardware
+            hardware-bone-bottom-kernel
         ];
     };
 
-    flake.modules.nixos.hardware-pharloom-disks = {
+    flake.modules.nixos.hardware-bone-bottom-disks = {
         fileSystems."/" =
             { 
                 device = "/dev/disk/by-uuid/058da0c9-9e7d-4c79-8f3a-8652bbb5609b";
@@ -27,17 +27,17 @@
         swapDevices = [ ];
     };
 
-    flake.modules.nixos.hardware-pharloom-hardware = { lib, ... }: {
+    flake.modules.nixos.hardware-bone-bottom-hardware = { lib, ... }: {
         imports = [ ];
         nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
         virtualisation.virtualbox.guest.enable = true;
     };
 
-    flake.modules.nixos.hardware-pharloom-connectivity = {
-        networking.hostName = "pharloom";
+    flake.modules.nixos.hardware-bone-bottom-connectivity = {
+        networking.hostName = "bone-bottom";
     };
 
-    flake.modules.nixos.hardware-pharloom-kernel = {
+    flake.modules.nixos.hardware-bone-bottom-kernel = {
         boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
         boot.initrd.kernelModules = [ ];
         boot.kernelModules = [ "kvm-amd" ];
