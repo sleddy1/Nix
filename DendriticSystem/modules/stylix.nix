@@ -3,7 +3,7 @@
   ...
 }: 
 {
-    flake.modules.nixos.stylix = {
+    flake.modules.nixos.stylix = { pkgs, ... }: {
         stylix = {
             enable = true;
             autoEnable = true;

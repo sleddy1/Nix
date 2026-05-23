@@ -3,6 +3,7 @@
   flake.nixosConfigurations.pharloom = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs; };
     modules = [
+      inputs.stylix.nixosModules.stylix
       self.modules.nixos.pharloom
     ];
   };
@@ -15,6 +16,7 @@
     hardware-pharloom
     desktops-niri
     backwards
+    stylix
 
     users-scott
   ] ++ [

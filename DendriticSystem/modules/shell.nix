@@ -16,7 +16,7 @@
 
     flake.modules.nixos.shell-essentials = { pkgs, ... }: {
         environment.systemPackages = with pkgs; [
-            vim
+            #vim
             curl
             git
             ffmpeg
@@ -27,12 +27,14 @@
     flake.modules.nixos.shell-kitty = { pkgs, ... }: {
         environment.systemPackages = with pkgs; [
             kitty
+            bash
         ];
         # programs.kitty.enable = true;
     };
 
     flake.modules.homeManager.shell-kitty = {
         programs.kitty.enable = true;
+        programs.bash.enable = true;
         # TODO: Get rid of prompt to close
     };
 
