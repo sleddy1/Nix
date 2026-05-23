@@ -60,15 +60,8 @@
         # stylix.targets.vscode.enable = true;
         
         home.packages = with pkgs; [
-            #firefox
-            #vscode
-            #discord
-            # fastfetch
-            # fuzzel
-            # TODO: Maybe clean below
             curl
             wget
-            #vim
         ];
     };
 }
