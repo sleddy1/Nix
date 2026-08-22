@@ -8,6 +8,7 @@
       hardware-common-connectivity
       # hardware-common-syncthing
       hardware-common-sound
+      hardware-common-bluetooth
     ];
   };
 
@@ -44,6 +45,13 @@
     services.pipewire = {
       enable = true;
       pulse.enable = true;
+    };
+  };
+
+  flake.modules.nixos.hardware-common-bluetooth = {
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
     };
   };
 }

@@ -11,6 +11,7 @@
             users-scott-essentials
             users-scott-apps
             users-scott-git
+            # wallpaper-rs
         ];
     };
 
@@ -47,13 +48,23 @@
 
     flake.modules.homeManager.users-scott-apps = {pkgs, ... }: {
         programs.fuzzel.enable = true;
-        programs.waybar.enable = true;
+        # programs.waybar.enable = true;
         programs.anki.enable = true;
         programs.fastfetch.enable = true;
         programs.discord.enable = true; 
         programs.vscode.enable = true; 
         programs.firefox.enable = true;
         programs.vim.enable = true;
+        services.wpaperd.enable = true;
+        services.mako.enable = true;
+        home.pointerCursor = {
+            gtk.enable = false;
+            enable = true;
+            package = pkgs.bibata-cursors;
+            name = "Bibata-Modern-Ice";
+            size = 24;
+        };
+
 
         # TODO: Investigate stylix and how it applies across modularity
         # stylix.targets.kitty.enable = true;

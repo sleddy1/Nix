@@ -11,6 +11,8 @@
         environment.systemPackages = with pkgs; [
             xwayland-satellite
             mako
+            bzmenu
+            kdePackages.dolphin
         ];
 
         # environment.sessionVariables = {

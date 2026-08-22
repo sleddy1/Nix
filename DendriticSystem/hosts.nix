@@ -15,6 +15,7 @@
     nixos
     hardware-pharloom
     desktops-niri
+    desktops-plasma
     backwards
     stylix
 
