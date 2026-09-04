@@ -5,7 +5,6 @@
             hardware-common
             hardware-pharloom-disks
             hardware-pharloom-hardware
-            hardware-pharloom-hardware
             hardware-pharloom-kernel
         ];
     };
